@@ -566,7 +566,6 @@ PanelWindow {
                    }
                }
 
-               Behavior on opacity { NumberAnimation { duration: 20; easing.type: Easing.OutCubic } }
                Behavior on width { NumberAnimation { duration: 300; easing.type: Easing.OutCubic } }
 
                MouseArea {
