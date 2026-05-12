@@ -421,41 +421,7 @@ PanelWindow {
                         }
                     }
                 }
-            }
-
-            Notch {
-                width: clockLabel.implicitWidth + 24
-                hovered: clockMA.containsMouse
-                tooltip: Qt.formatDateTime(new Date(), "dddd, MMMM d, yyyy")
-
-                Item {
-                    anchors.fill: parent
-
-                    Text {
-                        id: clockLabel
-                        anchors.centerIn: parent
-                        text: Qt.formatDateTime(new Date(), "hh:mm AP")
-                        color: root.walColor5
-                        font.pixelSize: 11
-                        font.bold: true
-                        font.family: "JetBrainsMono Nerd Font"
-                    }
-                }
-
-                MouseArea {
-                    id: clockMA
-                    anchors.fill: parent
-                    hoverEnabled: true
-                }
-
-                Timer {
-                    interval: 1000
-                    running: true
-                    repeat: true
-                    triggeredOnStart: true
-                    onTriggered: clockLabel.text = Qt.formatDateTime(new Date(), "HH:mm")
-                }
-            }
+              }
 
             Notch {
                 id: workspacesNotch
@@ -938,6 +904,72 @@ PanelWindow {
                     }
                 }
             }
+
+            Notch {
+                width: clockLabel.implicitWidth + 24
+                hovered: clockMA.containsMouse
+                //tooltip: Qt.formatDateTime(new Date(), "dddd, MMMM d, yyyy")
+
+                Item {
+                    anchors.fill: parent
+
+                    Text {
+                        id: clockLabel
+                        anchors.centerIn: parent
+                        //text: Qt.formatDateTime(new Date(), "hh:mm AP")
+                        color: root.walColor5
+                        font.pixelSize: 11
+                        font.bold: true
+                        font.family: "JetBrainsMono Nerd Font"
+                    }
+                }
+
+                MouseArea {
+                    id: clockMA
+                    anchors.fill: parent
+                    hoverEnabled: true
+                }
+
+                Timer {
+                    interval: 1000
+                    running: true
+                    repeat: true
+                    triggeredOnStart: true
+                    onTriggered: clockLabel.text = Qt.formatDateTime(new Date(), "HH:mm")
+                }
+            }
+
+            Notch {
+                width: dateLabel.implicitWidth + 24
+                hovered: dateMA.containsMouse
+
+                Item {
+                    anchors.fill: parent
+
+                    Text {
+                        id: dateLabel
+                        anchors.centerIn: parent
+                        color: root.walColor5
+                        font.pixelSize: 11
+                        font.bold: true
+                        font.family: "JetBrainsMono Nerd Font"
+                    }
+                }
+
+                MouseArea {
+                    id: dateMA
+                    anchors.fill: parent
+                    hoverEnabled: true
+                }
+
+                Timer {
+                    interval: 1000
+                    running: true
+                    repeat: true
+                    triggeredOnStart: true
+                    onTriggered: dateLabel.text = Qt.formatDateTime(new Date(), "dddd, MMMM d, yyyy")
+                }
+              }
 
             Notch {
                 width: 36
