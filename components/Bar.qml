@@ -547,6 +547,33 @@ PanelWindow {
                         }
                     }
                 }
+              }
+
+            Notch {
+              width: panelWindow.implicitWidth + 24
+              hovered: windowMA.containsMouse
+
+              Item {
+                  anchors.fill: parent
+                   Text {
+                       id: panelWindow
+                       anchors.centerIn: parent
+                       text: Hyprland.activeToplevel ? Hyprland.activeToplevel.title : "Desktop"
+                       color: root.walColor5
+                       font.pixelSize: 11
+                       font.bold: true
+                       font.family: "JetBrainsMono Nerd Font"
+                   }
+               }
+
+               Behavior on opacity { NumberAnimation { duration: 20; easing.type: Easing.OutCubic } }
+               Behavior on width { NumberAnimation { duration: 300; easing.type: Easing.OutCubic } }
+
+               MouseArea {
+                   id: windowMA
+                   anchors.fill: parent
+                   hoverEnabled: true
+               }
             }
         }
 
@@ -908,7 +935,6 @@ PanelWindow {
             Notch {
                 width: clockLabel.implicitWidth + 24
                 hovered: clockMA.containsMouse
-                //tooltip: Qt.formatDateTime(new Date(), "dddd, MMMM d, yyyy")
 
                 Item {
                     anchors.fill: parent
@@ -916,7 +942,6 @@ PanelWindow {
                     Text {
                         id: clockLabel
                         anchors.centerIn: parent
-                        //text: Qt.formatDateTime(new Date(), "hh:mm AP")
                         color: root.walColor5
                         font.pixelSize: 11
                         font.bold: true
