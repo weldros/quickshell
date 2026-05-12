@@ -34,4 +34,4 @@ PanelWindow {
         font.bold: true
         font.family: "JetBrainsMono Nerd Font"
     }
-}
+  }
