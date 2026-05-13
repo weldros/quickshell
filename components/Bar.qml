@@ -9,7 +9,7 @@ import Qt5Compat.GraphicalEffects
 PanelWindow {
     id: bar
     visible: true
-    exclusionMode: ExclusionMode.Exclusive
+    exclusionMode: ExclusionMode.Auto
     WlrLayershell.layer: WlrLayer.Top
     WlrLayershell.namespace: "quickshell"
     anchors { top: true; left: true; right: true }
@@ -398,7 +398,7 @@ PanelWindow {
                     Text {
                         anchors.centerIn: parent
                         text: "󰣇"
-                        color: root.walColor1
+                        color: root.walColor2
                         font.pixelSize: 16
                         font.family: "JetBrainsMono Nerd Font"
                     }
@@ -445,7 +445,7 @@ PanelWindow {
 
                             property real targetX: 0
                             property real targetWidth: 26
-                            property real highlightOpacity: 0.4
+                            property real highlightOpacity: 0.8
                             property real highlightScale: 1.0
 
                             x: targetX
@@ -453,7 +453,7 @@ PanelWindow {
                             opacity: highlightOpacity
                             scale: highlightScale
                             transformOrigin: Item.Center
-                            color: root.walColor13
+                            color: root.walColor5
                             antialiasing: true
 
                             Behavior on x {
@@ -504,7 +504,7 @@ PanelWindow {
 
                                     Rectangle {
                                         anchors.fill: parent
-                                        radius: 9
+                                        radius: 4
                                         color: isHovered && !isActive ? Qt.rgba(root.walColor13.r, root.walColor13.g, root.walColor13.b, 0.3) : "transparent"
                                         antialiasing: true
                                         Behavior on color { ColorAnimation { duration: 200; easing.type: Easing.OutCubic } }
@@ -1006,7 +1006,7 @@ PanelWindow {
                     Text {
                         anchors.centerIn: parent
                         text: "󰕮"
-                        color: root.walColor1
+                        color: root.walColor2
                         font.pixelSize: 15
                         font.family: "JetBrainsMono Nerd Font"
                     }
