@@ -188,7 +188,7 @@ PanelWindow {
     }
 
     Timer {
-        interval: 800
+        interval: 1
         running: true
         repeat: true
         triggeredOnStart: true
